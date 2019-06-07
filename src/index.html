@@ -9,42 +9,45 @@
 
 <body>
   <div class="container">
-    
-    <div class="forms">
-      <h1>find a health care provider in portland, or by provider name // specialty</h1>
-    
 
-        <form id="search-name">
-          <label for="name">Search for a health care provider:</label>
-          <input id="name" type="text">
-          <button type="submit" class="btn-info">Search</button>
-        </form>
-
-        <form id="search-specialty">
-          <label for="specialty">Search by medical practice:</label>
-          <input id="specialty" placeholder="Diabetes, Hypertension, Psychiatry" type="text">
-          <button type="submit" class="btn-info">Search</button>
-        </form>
+    <div class="welcome">
+      <h1>Medical Provider finder</h1>
+      <p>find a health care provider in portland, or by provider name // specialty</p>
     </div>
 
-    <table class="results">
+    <div class="forms">
+      <form id="search-name">
+        <label for="name">Search for a health care provider:</label>
+        <input id="name" type="text">
+        <button type="submit" class="btn-info">+</button>
+      </form>
+
+      <form id="search-specialty">
+        <label for="specialty">Or search by medical practice:</label>
+        <input id="specialty" placeholder="ex. Diabetes" type="text">
+        <button type="submit" class="btn-info">+</button>
+      </form>
+    </div>
+
+    <table id="results" class="form">
       <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Phone number</th>
-          <th scope="col">Address</th>
-          <th scope="col">Accepts new patients</th>
-        </tr>
+
+        <th scope="col">Name</th>
+        <th scope="col">Phone number</th>
+        <th scope="col">Address</th>
+        <th scope="col">Accepts new patients</th>
+
       </thead>
       <tbody>
-        <tr>
-          <td id="providerName"></td>
-          <td id="phone"></td>
-          <td id="address"></td>
-          <td id="newPt"></td>
-          <td></td>
-        </tr>
-    
+
+        <td id="providerName"></td>
+        <td id="phone"></td>
+        <td id="address"></td>
+        <td id="newPt"></td>
+
+      </tbody>
+    </table>
+
 
   </div>
 </body>

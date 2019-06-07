@@ -13,7 +13,23 @@ h1 {
   padding-bottom: 20px;
 }
 
+.welcome {
+  background-image: url("https://media.giphy.com/media/elDEyYfTCqZc1y3I6T/giphy.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #7c797952;
+  text-align: center;
+  color: lightgrey;
+  font-weight: lighter;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 5%;
+}
 
+.welcome p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 .forms {
   background-color: #7c797952;
   text-align: center;
@@ -21,16 +37,17 @@ h1 {
   font-weight: lighter;
   padding: 30px;
   border-radius: 10px;
+  margin-bottom: 5%;
 }
 
-.results {
+#results {
   background-color: #7c797952;
   text-align: center;
   color: lightgrey;
   font-weight: lighter;
   padding: 30px;
-  padding: 30px;
   border-radius: 10px;
+  list-style-type:none;
 }
 
 label {

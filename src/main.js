@@ -27,7 +27,7 @@ $(document).ready(function () {
 
 	$("#search-specialty").submit(function (event) {
 		event.preventDefault();
-		$(".results").show();
+		$("#results").show();
 		let practice = $('#specialty').val();
 		let newProvider = new Provider();
 		let promise = newProvider.searchByPractice(practice);

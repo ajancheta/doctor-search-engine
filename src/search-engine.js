@@ -1,4 +1,4 @@
-export default class Doctor {
+export default class Provider {
     constructor(nameInput, symptomInput) {
         this.nameInput = name;
         this.symptomInput = symptom;

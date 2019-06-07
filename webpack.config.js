@@ -1,81 +1,68 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+const Unsplash = require('unsplash-js').default;
+
 
 module.exports = {
-    externals: {
-        jquery: 'jQuery',
-        jqueryTerminal: 'jQuery.terminal'
-      },
-    mode: 'development',
-    entry: './src/main.js',
-    output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
-    },
-    devtool: 'eval-source-map',
-    devServer: {
-        contentBase: './dist'
-    },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title: 'Template',
-            template: './src/index.html',
-            inject: 'body'
-        }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',            
-            'window.jQuery': 'jquery',
-            tether: 'tether',
-            Tether: 'tether',
-            'window.Tether': 'tether',
-            Popper: ['popper.js', 'default'],
-            'window.Tether': 'tether',
-            Alert: 'exports-loader?Alert!bootstrap/js/dist/alert',
-            Button: 'exports-loader?Button!bootstrap/js/dist/button',
-            Carousel: 'exports-loader?Carousel!bootstrap/js/dist/carousel',
-            Collapse: 'exports-loader?Collapse!bootstrap/js/dist/collapse',
-            Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
-            Modal: 'exports-loader?Modal!bootstrap/js/dist/modal',
-            Popover: 'exports-loader?Popover!bootstrap/js/dist/popover',
-            Scrollspy: 'exports-loader?Scrollspy!bootstrap/js/dist/scrollspy',
-            Tab: 'exports-loader?Tab!bootstrap/js/dist/tab',
-            Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
-            Util: 'exports-loader?Util!bootstrap/js/dist/util'
-        }),
-    ],
-    module: {
-        rules: [{
-                //Rules for css files
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            },
-            {
-                //Rules for linter
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: "eslint-loader"
-            },
-            {
-                test: /\.m?js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            },
-            {
-                test: /bootstrap\/dist\/js\/umd\//,
-                use: 'imports-loader?jQuery=jquery'
-            }
+  entry: './src/main.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  devtool: 'eval-source-map',
+  devServer: {
+    contentBase: './dist'
+  },
+  plugins: [
+    new Dotenv(),
+    new UglifyJsPlugin({ sourceMap: true }),
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      title: 'Triangles',
+      template: './src/index.html',
+      inject: 'body'
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
         ]
-    }
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[path][name].[ext]',
+                    },
+  
+                  },
+                ],
+              },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
+        test: /\.js$/,
+        exclude: [
+          /node_modules/,
+          /spec/
+        ],
+        loader: "babel-loader",
+        options: {
+          presets: ['es2015']
+        }
+      }
+    ]
+  }
 };

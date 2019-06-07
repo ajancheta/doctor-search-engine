@@ -3,7 +3,6 @@ export default class Provider {
     searchByProvider(name) {
       return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
-        // let location = "or-portland";
         let apiKey = process.env.exports.apiKey;
 
         let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=or-portland&skip=0&limit=10&user_key=${apiKey}`;
@@ -23,11 +22,8 @@ export default class Provider {
     searchByPractice(practice) {
       return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
-        // let location = "or-portland";
         let apiKey = process.env.exports.apiKey;
-
         let url = `https://api.betterdoctor.com/2016-03-01/doctors?query=${practice}&location=or-portland&skip=0&limit=10&user_key=${apiKey}`;
-
 
         request.onload = function () {
           if (this.status === 200) {
@@ -43,7 +39,6 @@ export default class Provider {
 
   displayName(response) {
     let result = "";
-
     if(response.data.length === 0){
       return "There is no matching result";
     }

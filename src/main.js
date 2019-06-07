@@ -10,7 +10,7 @@ $(document).ready(function () {
 		$(".results").show();
 		let nameInput = $('#name').val();
 		let newProvider = new Provider();
-		let promise = newProvider.searchByProvider(name);
+		let promise = newProvider.searchByProvider(nameInput);
 
 		promise.then(function (response) {
 			let body = JSON.parse(response);
@@ -18,7 +18,6 @@ $(document).ready(function () {
 			$("#newPt").append(newProvider.displayNewPatient(body));
 			$("#phone").append(newProvider.displayPhoneNumber(body));
 			$("#address").append(newProvider.displayAddress(body));
-
 
 		}, function (error) {
 			$('.showErrors').text(`There was an error processing your request: ${error.message}`);
@@ -29,7 +28,7 @@ $(document).ready(function () {
 	$("#search-specialty").submit(function (event) {
 		event.preventDefault();
 		$(".results").show();
-		let practice = $('#name').val();
+		let practice = $('#specialty').val();
 		let newProvider = new Provider();
 		let promise = newProvider.searchByPractice(practice);
 
@@ -39,12 +38,9 @@ $(document).ready(function () {
 			$("#newPt").append(newProvider.displayNewPatient(body));
 			$("#phone").append(newProvider.displayPhoneNumber(body));
 			$("#address").append(newProvider.displayAddress(body));
-
-
 		}, function (error) {
 			$('.showErrors').text(`There was an error processing           your request: ${error.message}`);
 		});
-
 	});
 });
 

@@ -5,18 +5,19 @@
 #### By _Ashley J. Ancheta_
 
 ## Description
-This is a great application.
+An application to allow users to effectively search health care providers in Portland, OR by medical practice and by provider name.
 
 ## Specs
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| Text and Text and Text and Text | Text | More Text |
+| User will search information by medical provider's name in Portland, OR | Warhus | Dr. Damon Warhus / Women's Health Care Associates / |
+| User will search information by medical practice in Portland, OR | Women's Health | Women's Health: 5 Providers in the area |
 
 ## Installation Requirements
 * Download and install Node.js 12.3.1
 
 ## Setup Instructions for accessing the Application
-* Clone this repository "https://github.com/ajancheta/Doctor-Search.git"
+* Clone this repository "https://github.com/ajancheta/medicalprovider-search-engine.git"
 * Open the repository in a preferred text editor such as Atom or Visual Studio Code.
 
 To run the application, open your machine's terminal and type in the following commands within the main project directory

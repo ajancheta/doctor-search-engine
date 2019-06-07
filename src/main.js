@@ -9,21 +9,17 @@ $(document).ready(function() {
     $("#search-name").submit(function(event) {  
 			event.preventDefault();
 			let nameInput = $('#nameInput').val();
-
-			let newProvider = new Provider(nameInput, 0);
-			let promise = newProvider.searchByProvider();
+			let newProvider = new Provider();
+			let promise = newProvider.searchByProvider(name);
 	
       promise.then(function(response) {
 				let body = JSON.parse(response);
-				let mainData = body.data;
-
-				if(mainData.length === 0) {
-					$('#printOutName').text('No health care provider for this search.');
-				} else {
-					for(let i = 0 < mainData.length; i++)
-				}
-        
-      
+				
+				$("#name").append(Provider.displayName(body));
+				$("#newPatient").append(Provider.displayNewPatient(body));
+				$("#phone").append(Provider.displayPhone(body));
+				$("#address").append(Provider.displayAddress(body));
+				$("#website").append(Provider.displayWebsite(body));
         
       }, function(error) {
         $('.showErrors').text(`There was an error processing your request: ${error.message}`);

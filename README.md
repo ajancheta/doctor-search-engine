@@ -1,4 +1,4 @@
-# Doctor Searh
+# Medical Provider Search Engine
 
 #### _JavaScript, Week 2 Independent Project, *06.07.2019*_
 

@@ -3,11 +3,10 @@ export default class Provider {
     searchByProvider(name) {
       return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
-        let location = "or-portland";
-        let apiKey = process.env.exports.API_KEY;
+        // let location = "or-portland";
+        let apiKey = process.env.exports.apiKey;
 
-        let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=${location}&skip=0&limit=10&user_key=${apiKey}`;
-
+        let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=or-portland&skip=0&limit=10&user_key=${apiKey}`;
 
         request.onload = function () {
           if (this.status === 200) {
@@ -24,10 +23,10 @@ export default class Provider {
     searchByPractice(practice) {
       return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
-        let location = "or-portland";
-        let apiKey = process.env.exports.API_KEY;
-        
-        let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=${location}&skip=0&limit=10&user_key=${apiKey}`;
+        // let location = "or-portland";
+        let apiKey = process.env.exports.apiKey;
+
+        let url = `https://api.betterdoctor.com/2016-03-01/doctors?query=${practice}&location=or-portland&skip=0&limit=10&user_key=${apiKey}`;
 
 
         request.onload = function () {
@@ -68,20 +67,6 @@ export default class Provider {
 
     for(let i = 0; i < response.data.length; i++) {
       result += "<li>" + response.data[i].practices[0].visit_address.street + " " + response.data[i].practices[0].visit_address.city + " " + response.data[i].practices[0].visit_address.state + " " + response.data[i].practices[0].visit_address.zip + "</li><br>";
-    }
-    return result;
-  }
-
-  displayWebsite(response) {
-    let result = "";
-
-    for (let i = 0; i < response.data.length; i++) {
-      if(response.data[i].practices[0].website){
-       result = "<li>" + response.data[i].practices[0].website + "<li><br>";
-      }else{
-        result += "<li>None<li><br>";
-      }
-      console.log(response.data[i].practices[0].website);
     }
     return result;
   }

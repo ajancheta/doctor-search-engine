@@ -8,24 +8,43 @@ $(document).ready(function () {
 	$("#search-name").submit(function(event) {
 		event.preventDefault();
 		$(".results").show();
-		let nameInput = $('#nameInput').val();
+		let nameInput = $('#name').val();
 		let newProvider = new Provider();
 		let promise = newProvider.searchByProvider(name);
-		console.log(newProvider);
-		console.log(nameInput);
+
 		promise.then(function (response) {
 			let body = JSON.parse(response);
-			$("#name").append(newProvider.displayName(body));
+			$("#providerName").append(newProvider.displayName(body));
 			$("#newPt").append(newProvider.displayNewPatient(body));
-			$("#phone").append(newProvider.displayPhone(body));
+			$("#phone").append(newProvider.displayPhoneNumber(body));
 			$("#address").append(newProvider.displayAddress(body));
-			$("#website").append(newProvider.displayWebsite(body));
 			
 			
 		}, function (error) {
 			$('.showErrors').text(`There was an error processing your request: ${error.message}`);
+
 		});
 	});
-	console.log("test");
+
+		$("#search-specialty").submit(function(event) {
+			event.preventDefault();
+			$(".results").show();
+			let practice = $('#name').val();
+			let newProvider = new Provider();
+			let promise = newProvider.searchByPractice(practice);
+	
+			promise.then(function (response) {
+				let body = JSON.parse(response);
+				$("#providerName").append(newProvider.displayName(body));
+				$("#newPt").append(newProvider.displayNewPatient(body));
+				$("#phone").append(newProvider.displayPhoneNumber(body));
+				$("#address").append(newProvider.displayAddress(body));
+				
+				
+			}, function (error) {
+				$('.showErrors').text(`There was an error processing your request: ${error.message}`);
+			});
+	
+	});
 });
 

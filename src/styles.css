@@ -14,11 +14,23 @@ h1 {
 }
 
 
-.jumbotron {
+.forms {
   background-color: #7c797952;
   text-align: center;
   color: lightgrey;
   font-weight: lighter;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.results {
+  background-color: #7c797952;
+  text-align: center;
+  color: lightgrey;
+  font-weight: lighter;
+  padding: 30px;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 label {
@@ -34,8 +46,4 @@ p {
 #userInput {
   text-transform: uppercase;
   color: white;
-}
-
-#yoMood {
-  display: none;
 }

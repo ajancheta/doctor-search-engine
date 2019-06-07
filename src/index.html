@@ -3,19 +3,19 @@
 <head>
   <script src="http://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="unsplash-service.js"></script>
+  <script type="text/javascript" src="search-engine.js"></script>
   <title>Doctor Search</title>
 </head>
 
 <body>
   <div class="container">
     
-    <div class="jumbotron">
+    <div class="forms">
       <h1>find a health care provider in portland, or by provider name // specialty</h1>
 
         <form id="search-name">
-          <label for="nameInput">Search for a health care provider:</label>
-          <input id="nameInput" type="text">
+          <label for="name">Search for a health care provider:</label>
+          <input id="name" type="text">
           <button type="submit" class="btn-info">Search</button>
         </form>
 
@@ -26,13 +26,23 @@
         </form>
     </div>
 
-    <div class="results">
-      <span id="name"></span>
-      <span id="phone"></span>
-      <span id="address"></span>
-      <span id="website"></span>
-      <span id="newPt"></span>
-    </div>
+    <table class="results">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Phone number</th>
+          <th scope="col">Address</th>
+          <th scope="col">Accepts new patients</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="providerName"></td>
+          <td id="phone"></td>
+          <td id="address"></td>
+          <td id="newPt"></td>
+          <td></td>
+        </tr>
     
 
   </div>

@@ -1,6 +1,6 @@
-# Project Name
+# Doctor Searh
 
-#### _JavaScript, Week # Independent Project, *Date*_
+#### _JavaScript, Week 2 Independent Project, *06.07.2019*_
 
 #### By _Ashley J. Ancheta_
 
@@ -16,7 +16,7 @@ This is a great application.
 * Download and install Node.js 12.3.1
 
 ## Setup Instructions for accessing the Application
-* Clone this repository "https://github.com/ajancheta/Project-Name.git"
+* Clone this repository "https://github.com/ajancheta/Doctor-Search.git"
 * Open the repository in a preferred text editor such as Atom or Visual Studio Code.
 
 To run the application, open your machine's terminal and type in the following commands within the main project directory

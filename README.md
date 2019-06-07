@@ -10,7 +10,7 @@ An application to allow users to search health care providers in Portland, OR by
 ## Specs
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| User will search information by medical provider's name | Warhus | Damon Warhus / Women's Health Care Associates / |
+| User will search information by medical provider's name | Warhus | Damon Warhus's information will populate |
 | User will search providers by medical practice | Women's Health | Damon Warhus, Anna Karlsson, Diana Fitzpatrick | 
 | All provider's information should include relavent contact information | Anna Karlsson | Phone Number: 5032247224 / Address: 2348 NW Lovejoy St Portland OR 97210 / Accepts new patients: Yes |
 
@@ -40,7 +40,7 @@ There are no known bugs.
 This application is best viewed on a full screen. Should any problems occur, discover other bugs, or experience issues with viewing, please contact me at ashleyjancheta@gmail.com
 
 ## Technologies Used
-This application was built in Atom using JavaScript, Node.js 12.3.1, jQuery 3.4.1, Bootstrap v4.3.1 and a custom css file. For unit testing, Jasmine framework and Karma task runner are both used.
+This application was built in Atom using JavaScript, Node.js 12.3.1, jQuery 3.4.1, Bootstrap v4.3.1 and a custom css file.
 
 ### License
 

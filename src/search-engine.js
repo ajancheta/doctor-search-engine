@@ -1,5 +1,4 @@
 export default class Provider {
-
     searchByProvider(name) {
       return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
@@ -71,7 +70,7 @@ export default class Provider {
     for (let i = 0; i < response.data.length; i++) {
       if(response.data[i].practices[0].accepts_new_patients === true){
         result += "<li>Yes<li><br>";
-      }else{
+      } else {
         result += "<li>No<li><br>";
       }
     }

@@ -21,7 +21,6 @@ $(document).ready(function () {
 
 		}, function (error) {
 			$('.showErrors').text(`There was an error processing your request: ${error.message}`);
-
 		});
 	});
 
@@ -39,7 +38,7 @@ $(document).ready(function () {
 			$("#phone").append(newProvider.displayPhoneNumber(body));
 			$("#address").append(newProvider.displayAddress(body));
 		}, function (error) {
-			$('.showErrors').text(`There was an error processing           your request: ${error.message}`);
+			$('.showErrors').text(`There was an error processing your request: ${error.message}`);
 		});
 	});
 });

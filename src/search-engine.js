@@ -1,13 +1,13 @@
-let apiKey = process.env.exports.API_KEY;
-
 export default class Provider {
 
-    searchByProvider(name, count) {
+    searchByProvider(name) {
       return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
         let location = "or-portland";
+        let apiKey = process.env.exports.API_KEY;
 
-        let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=${location}skip=0&limit=${count}&user_key=${apiKey}`;
+        let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=${location}&skip=0&limit=10&user_key=${apiKey}`;
+
 
         request.onload = function () {
           if (this.status === 200) {
@@ -21,12 +21,13 @@ export default class Provider {
       });
     } 
 
-    searchByPractice() {
+    searchByPractice(practice) {
       return new Promise(function (resolve, reject) {
         let request = new XMLHttpRequest();
         let location = "or-portland";
+        let apiKey = process.env.exports.API_KEY;
         
-        let url = `https://api.betterdoctor.com/2016-03-01/doctors?query=${practice}&location=${location}&skip=0&limit=${count}&user_key=${apiKey}`;
+        let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&location=${location}&skip=0&limit=10&user_key=${apiKey}`;
 
 
         request.onload = function () {
@@ -40,9 +41,8 @@ export default class Provider {
         request.send();
       });
     } 
-  }
 
-  displayName(response){
+  displayName(response) {
     let result = "";
 
     if(response.data.length === 0){
@@ -54,7 +54,7 @@ export default class Provider {
     return result;
   }
   
-  displayPhoneNumber(response){
+  displayPhoneNumber(response) {
     let result = "";
 
     for(let i = 0; i < response.data.length; i++) {
@@ -72,7 +72,7 @@ export default class Provider {
     return result;
   }
 
-  displayWebsite(response){
+  displayWebsite(response) {
     let result = "";
 
     for (let i = 0; i < response.data.length; i++) {

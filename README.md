@@ -18,7 +18,7 @@ An application to allow users to search health care providers in Portland, OR by
 * Download and install Node.js 12.3.1
 
 ## Setup Instructions for accessing the Application
-* Clone this repository "https://github.com/ajancheta/medicalprovider-search-engine.git"
+* Clone this repository "https://github.com/ajancheta/doctor-search-engine.git"
 * A personal API key from BetterDoctor API is required to view this application. Request the key at https://developer.betterdoctor.com.
 * Once you obtain your API key, within the `./src/search-engine.js` replace `"${process.env.exports.apiKey}" ` with your own API key.
 * Open the repository in a preferred text editor such as Atom or Visual Studio Code.
